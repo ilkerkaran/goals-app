@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 const goalListItem = ({ goal, onDelete }) => {
 
 
@@ -11,10 +11,16 @@ const goalListItem = ({ goal, onDelete }) => {
 
   return (<TouchableOpacity activeOpacity={0.7} onPress={onPressHandler}>
     <View>
-      <Text>{goal.title}</Text>
+      <Text style={styles.text}>{goal.title}</Text>
     </View>
   </TouchableOpacity>)
 }
 
 
 export default goalListItem;
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 30
+  }
+})

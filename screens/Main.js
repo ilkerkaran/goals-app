@@ -34,13 +34,16 @@ const main = () => {
   }
   return (
     <View style={styles.main}>
+
       <Modal visible={isAddingActive} animationType={"slide"}>
-        <View style={styles.main}>
+        <View style={styles.modalFlex}>
           <GoalInput onPressOK={onModalOKHandler} onPressCancel={onModalCancelHandler} />
         </View>
       </Modal>
-      <View style={styles.main}>
-        <Button onPress={onAddGoalHandler} title="ADD GOAL" />
+
+      <View >
+        <View style={styles.button}>
+          <Button onPress={onAddGoalHandler} title="ADD GOAL" /></View>
         <GoalList goals={goals} onGoalDelete={onGoalDeleteHandler} />
       </View>
     </View>
@@ -55,8 +58,17 @@ export default main;
 
 const styles = StyleSheet.create({
   main: {
-    justifyContent: "center",
-    flex: 1
+    marginVertical: 80,
+    width: "80%",
+  },
+  modalFlex: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  button: {
+    marginHorizontal: "15%"
   }
 
 
