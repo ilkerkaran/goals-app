@@ -1,65 +1,77 @@
-import React, { useState } from 'react';
-import { Modal, Button, View, StyleSheet } from 'react-native';
-import GoalList from '../components/GoalList';
+import React, { useState } from 'react'
+import {
+  Modal, Button, View, StyleSheet
+} from 'react-native'
+import GoalList from '../components/GoalList'
 import GoalInput from '../components/GoalInput'
 
 const INITIAL_GOALS = [{
   id: 1,
-  title: "Learn Docker"
+  title: 'Learn Docker'
 },
 {
   id: 2,
-  title: "Learn React Native"
+  title: 'Learn React Native'
 }]
 const main = () => {
-  const [goals, setGoals] = useState(INITIAL_GOALS);
-  const [isAddingActive, setIsAddingActive] = useState(false);
+  const [goals, setGoals] = useState(INITIAL_GOALS)
+  const [isAddingActive, setIsAddingActive] = useState(false)
 
   const onModalOKHandler = (goal) => {
-    setIsAddingActive(false);
+    setIsAddingActive(false)
     setGoals([...goals, goal])
   }
 
   const onModalCancelHandler = () => {
-    setIsAddingActive(false);
+    setIsAddingActive(false)
   }
 
   const onAddGoalHandler = () => {
-    setIsAddingActive(true);
+    setIsAddingActive(true)
   }
 
   const onGoalDeleteHandler = (id) => {
-    setGoals(goals.filter(g => g.id != id))
-
+    setGoals(goals.filter((g) => g.id != id))
   }
   return (
     <View style={styles.main}>
 
-      <Modal visible={isAddingActive} animationType={"slide"}>
+      <Modal
+        visible={isAddingActive}
+        animationType="slide"
+      >
         <View style={styles.modalFlex}>
-          <GoalInput onPressOK={onModalOKHandler} onPressCancel={onModalCancelHandler} />
+          <GoalInput
+            onPressOK={onModalOKHandler}
+            onPressCancel={onModalCancelHandler}
+          />
         </View>
       </Modal>
 
-      <View >
+      <View>
         <View style={styles.button}>
-          <Button onPress={onAddGoalHandler} title="ADD GOAL" /></View>
-        <GoalList goals={goals} onGoalDelete={onGoalDeleteHandler} />
+          <Button
+            onPress={onAddGoalHandler}
+            title="ADD GOAL"
+          />
+
+        </View>
+        <GoalList
+          goals={goals}
+          onGoalDelete={onGoalDeleteHandler}
+        />
       </View>
     </View>
 
-  );
+  )
 }
 
-
-export default main;
-
-
+export default main
 
 const styles = StyleSheet.create({
   main: {
     marginVertical: 80,
-    width: "80%",
+    width: '80%'
   },
   modalFlex: {
     flex: 1,
@@ -68,8 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   button: {
-    marginHorizontal: "15%"
+    marginHorizontal: '15%'
   }
-
 
 })

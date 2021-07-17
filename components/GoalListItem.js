@@ -1,23 +1,30 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import {
+  View, Text, TouchableOpacity, StyleSheet
+} from 'react-native'
+
 const goalListItem = ({ goal, onDelete }) => {
-
-
   const onPressHandler = () => {
-    onDelete(goal.id);
+    onDelete(goal.id)
   }
   console.log('rendered ', goal)
   console.log('rendered for', goal.title)
 
-  return (<TouchableOpacity activeOpacity={0.7} onPress={onPressHandler}>
-    <View>
-      <Text style={styles.text}>{goal.title}</Text>
-    </View>
-  </TouchableOpacity>)
+  return (
+    <TouchableOpacity
+      activeOpacity={0.7}
+      onPress={onPressHandler}
+    >
+      <View>
+        <Text style={styles.text}>
+          {goal.title}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  )
 }
 
-
-export default goalListItem;
+export default goalListItem
 
 const styles = StyleSheet.create({
   text: {
