@@ -47,14 +47,12 @@ const main = () => {
           />
         </View>
       </Modal>
-
       <View>
         <View style={styles.button}>
           <Button
             onPress={onAddGoalHandler}
             title="ADD GOAL"
           />
-
         </View>
         <GoalList
           goals={goals}

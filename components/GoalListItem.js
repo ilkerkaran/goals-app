@@ -7,9 +7,6 @@ const goalListItem = ({ goal, onDelete }) => {
   const onPressHandler = () => {
     onDelete(goal.id)
   }
-  console.log('rendered ', goal)
-  console.log('rendered for', goal.title)
-
   return (
     <TouchableOpacity
       activeOpacity={0.7}
