@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/core": "^7.9.0",
     "babel-preset-expo": "^8.4.0",
-    "expo": "^42.0.0",
+    "expo": "^47.0.9",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
